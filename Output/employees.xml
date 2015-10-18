@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<employess>
+	<employee>
+		<employeeid>1</employeeid>
+		<firstname>Guy</firstname>
+		<lastname>Gilbert</lastname>
+		<middlename>R</middlename>
+		<jobtitle>Production Technician</jobtitle>
+		<department>
+			<departmentid>7</departmentid>
+			<name>Production</name>
+			<managerid>148</managerid>
+		</department>
+		<managerid>16</managerid>
+		<hiredate>31/07/1998 00:00:00</hiredate>
+		<salary>12500.0000</salary>
+		<address>
+			<addressid>166</addressid>
+			<addresstext>7726 Driftwood Drive</addresstext>
+			<town>
+				<townid>12</townid>
+				<name>Monroe</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>2</employeeid>
+		<firstname>Kevin</firstname>
+		<lastname>Brown</lastname>
+		<middlename>F</middlename>
+		<jobtitle>Marketing Assistant</jobtitle>
+		<department>
+			<departmentid>4</departmentid>
+			<name>Marketing</name>
+			<managerid>46</managerid>
+		</department>
+		<managerid>6</managerid>
+		<hiredate>26/02/1999 00:00:00</hiredate>
+		<salary>13500.0000</salary>
+		<address>
+			<addressid>102</addressid>
+			<addresstext>2294 West 39th St.</addresstext>
+			<town>
+				<townid>7</townid>
+				<name>Everett</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>3</employeeid>
+		<firstname>Roberto</firstname>
+		<lastname>Tamburello</lastname>
+		<jobtitle>Engineering Manager</jobtitle>
+		<department>
+			<departmentid>1</departmentid>
+			<name>Engineering</name>
+			<managerid>12</managerid>
+		</department>
+		<managerid>12</managerid>
+		<hiredate>12/12/1999 00:00:00</hiredate>
+		<salary>43300.0000</salary>
+		<address>
+			<addressid>193</addressid>
+			<addresstext>8000 Crane Court</addresstext>
+			<town>
+				<townid>1</townid>
+				<name>Redmond</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>4</employeeid>
+		<firstname>Rob</firstname>
+		<lastname>Walters</lastname>
+		<jobtitle>Senior Tool Designer</jobtitle>
+		<department>
+			<departmentid>2</departmentid>
+			<name>Tool Design</name>
+			<managerid>4</managerid>
+		</department>
+		<managerid>3</managerid>
+		<hiredate>05/01/2000 00:00:00</hiredate>
+		<salary>29800.0000</salary>
+		<address>
+			<addressid>155</addressid>
+			<addresstext>5678 Lakeview Blvd.</addresstext>
+			<town>
+				<townid>24</townid>
+				<name>Minneapolis</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>5</employeeid>
+		<firstname>Thierry</firstname>
+		<lastname>D'Hers</lastname>
+		<middlename>B</middlename>
+		<jobtitle>Tool Designer</jobtitle>
+		<department>
+			<departmentid>2</departmentid>
+			<name>Tool Design</name>
+			<managerid>4</managerid>
+		</department>
+		<managerid>263</managerid>
+		<hiredate>11/01/2000 00:00:00</hiredate>
+		<salary>25000.0000</salary>
+		<address>
+			<addressid>40</addressid>
+			<addresstext>1399 Firestone Drive</addresstext>
+			<town>
+				<townid>8</townid>
+				<name>Bothell</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>6</employeeid>
+		<firstname>David</firstname>
+		<lastname>Bradley</lastname>
+		<middlename>M</middlename>
+		<jobtitle>Marketing Manager</jobtitle>
+		<department>
+			<departmentid>5</departmentid>
+			<name>Purchasing</name>
+			<managerid>6</managerid>
+		</department>
+		<managerid>109</managerid>
+		<hiredate>20/01/2000 00:00:00</hiredate>
+		<salary>37500.0000</salary>
+		<address>
+			<addressid>199</addressid>
+			<addresstext>9882 Clay Rde</addresstext>
+			<town>
+				<townid>1</townid>
+				<name>Redmond</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>7</employeeid>
+		<firstname>JoLynn</firstname>
+		<lastname>Dobney</lastname>
+		<middlename>M</middlename>
+		<jobtitle>Production Supervisor</jobtitle>
+		<department>
+			<departmentid>7</departmentid>
+			<name>Production</name>
+			<managerid>148</managerid>
+		</department>
+		<managerid>21</managerid>
+		<hiredate>26/01/2000 00:00:00</hiredate>
+		<salary>25000.0000</salary>
+		<address>
+			<addressid>275</addressid>
+			<addresstext>8290 Margaret Ct.</addresstext>
+			<town>
+				<townid>4</townid>
+				<name>Seattle</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>8</employeeid>
+		<firstname>Ruth</firstname>
+		<lastname>Ellerbrock</lastname>
+		<middlename>Ann</middlename>
+		<jobtitle>Production Technician</jobtitle>
+		<department>
+			<departmentid>7</departmentid>
+			<name>Production</name>
+			<managerid>148</managerid>
+		</department>
+		<managerid>185</managerid>
+		<hiredate>06/02/2000 00:00:00</hiredate>
+		<salary>13500.0000</salary>
+		<address>
+			<addressid>108</addressid>
+			<addresstext>5242 Marvelle Ln.</addresstext>
+			<town>
+				<townid>7</townid>
+				<name>Everett</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>9</employeeid>
+		<firstname>Gail</firstname>
+		<lastname>Erickson</lastname>
+		<middlename>A</middlename>
+		<jobtitle>Design Engineer</jobtitle>
+		<department>
+			<departmentid>1</departmentid>
+			<name>Engineering</name>
+			<managerid>12</managerid>
+		</department>
+		<managerid>3</managerid>
+		<hiredate>06/02/2000 00:00:00</hiredate>
+		<salary>32700.0000</salary>
+		<address>
+			<addressid>22</addressid>
+			<addresstext>6307 Greenbelt Way</addresstext>
+			<town>
+				<townid>5</townid>
+				<name>Bellevue</name>
+			</town>
+		</address>
+	</employee>
+	<employee>
+		<employeeid>10</employeeid>
+		<firstname>Barry</firstname>
+		<lastname>Johnson</lastname>
+		<middlename>K</middlename>
+		<jobtitle>Production Technician</jobtitle>
+		<department>
+			<departmentid>7</departmentid>
+			<name>Production</name>
+			<managerid>148</managerid>
+		</department>
+		<managerid>185</managerid>
+		<hiredate>07/02/2000 00:00:00</hiredate>
+		<salary>13500.0000</salary>
+		<address>
+			<addressid>285</addressid>
+			<addresstext>3280 Pheasant Circle</addresstext>
+			<town>
+				<townid>11</townid>
+				<name>Snohomish</name>
+			</town>
+		</address>
+	</employee>
+</employess>
