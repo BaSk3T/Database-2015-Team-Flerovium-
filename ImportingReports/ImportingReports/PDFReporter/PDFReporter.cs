@@ -1,14 +1,15 @@
-﻿namespace PDFReporter
+﻿namespace ImportingReports
 {
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.IO;
     using iTextSharp.text;
     using iTextSharp.text.pdf;
+    using Models;
 
     public class PDFReporter
     {
-        private const string Path = @"../../../Output/";
+        private const string Path = @"";
 
         public PDFReporter(DbContext db)
         {
@@ -17,10 +18,10 @@
 
         public DbContext DataBase { get; set; }
 
-        public void GeneratePdfEmployeesReport(string documentName, List<Employees> listOfEmployees)
+        public void GeneratePdfSalesReport(string documentName, List<Sales> listOfSales)
         {
             var headerFontStyle = PDFStyle.SetFontStyle("Arial", 14, Font.BOLD);
-            var employeesHeadersFontStyle = PDFStyle.SetFontStyle("Arial", 10, Font.BOLD);
+            var salesHeadersFontStyle = PDFStyle.SetFontStyle("Arial", 10, Font.BOLD);
             var cellsFontStyle = PDFStyle.SetFontStyle("Arial", 8, Font.NORMAL);
 
             var document = this.CreatePdfDocument(Path + documentName);
@@ -28,26 +29,26 @@
 
             var table = this.CreatePdfTable(3, new int[] { 4, 4, 4 });
 
-            var documentHeader = this.CreatePdfCell("Employees", headerFontStyle, PDFStyle.Color(160, 170, 180), 3, 1);
+            var documentHeader = this.CreatePdfCell("Sales", headerFontStyle, PDFStyle.Color(160, 170, 180), 3, 1);
 
-            var lastNameHeader = this.CreatePdfCell("Last Name", employeesHeadersFontStyle, PDFStyle.Color(200, 200, 200));
-            var firstNameHeader = this.CreatePdfCell("First Name", employeesHeadersFontStyle, PDFStyle.Color(200, 200, 200));
-            var titleHeader = this.CreatePdfCell("Title", employeesHeadersFontStyle, PDFStyle.Color(200, 200, 200));
-            
+            var bookIdHeader = this.CreatePdfCell("Book Id", salesHeadersFontStyle, PDFStyle.Color(200, 200, 200));
+            var quantityHeader = this.CreatePdfCell("Quantity", salesHeadersFontStyle, PDFStyle.Color(200, 200, 200));
+            var priceHeader = this.CreatePdfCell("Unit Price", salesHeadersFontStyle, PDFStyle.Color(200, 200, 200));
+
             table.AddCell(documentHeader);
-            table.AddCell(lastNameHeader);
-            table.AddCell(firstNameHeader);
-            table.AddCell(titleHeader);
+            table.AddCell(bookIdHeader);
+            table.AddCell(quantityHeader);
+            table.AddCell(priceHeader);
 
-            foreach (var employee in listOfEmployees)
+            foreach (var sale in listOfSales)
             {
-                var lastName = this.CreatePdfCell(employee.LastName, cellsFontStyle, PDFStyle.Color(255, 255, 255));
-                var firstName = this.CreatePdfCell(employee.FirstName, cellsFontStyle, PDFStyle.Color(255, 255, 255));
-                var title = this.CreatePdfCell(employee.Title, cellsFontStyle, PDFStyle.Color(255, 255, 255));
-            
-                table.AddCell(lastName);
-                table.AddCell(firstName);
-                table.AddCell(title);
+                var bookId = this.CreatePdfCell(sale.BookId.ToString(), cellsFontStyle, PDFStyle.Color(255, 255, 255));
+                var quantity = this.CreatePdfCell(sale.Quantity.ToString(), cellsFontStyle, PDFStyle.Color(255, 255, 255));
+                var price = this.CreatePdfCell(sale.UnitPrice.ToString(), cellsFontStyle, PDFStyle.Color(255, 255, 255));
+
+                table.AddCell(bookId);
+                table.AddCell(quantity);
+                table.AddCell(price);
             }
 
             document.Add(table);
@@ -86,6 +87,6 @@
             cell.Colspan = colSpan;
             cell.HorizontalAlignment = horizontalAligment;
             return cell;
-        }       
+        }
     }
 }
