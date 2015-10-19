@@ -24,4 +24,190 @@
     <publisher>Prozoretz</publisher>
     <basePrice>30.00</basePrice>
   </book>
+  <book id="5" author-id="3" publisher-id="3">
+    <title>Lord Of The Rings The Fellowship Of The Ring</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher>Harper Collins</publisher>
+    <basePrice>21.00</basePrice>
+  </book>
+  <book id="6" author-id="3" publisher-id="3">
+    <title>Lord Of The Rings The Two Towers</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher>Harper Collins</publisher>
+    <basePrice>20.50</basePrice>
+  </book>
+  <book id="7" author-id="3" publisher-id="3">
+    <title>Lord Of The Return Of The King</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher>Harper Collins</publisher>
+    <basePrice>23.50</basePrice>
+  </book>
+  <book id="8" author-id="3" publisher-id="3">
+    <title>The Hobbit</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher>Harper Collins</publisher>
+    <basePrice>20.00</basePrice>
+  </book>
+  <book id="9" author-id="4" publisher-id="4">
+    <title>Harry Potter And The Prisoner Of Azkaban</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <basePrice>18.00</basePrice>
+  </book>
+  <book id="10" author-id="4" publisher-id="4">
+    <title>Harry Potter And The Philosopher Stone</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <basePrice>21.00</basePrice>
+  </book>
+  <book id="11" author-id="4" publisher-id="4">
+    <title>Harry Potter And The Chamber Of Secrets</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <basePrice>19.50</basePrice>
+  </book>
+  <book id="12" author-id="4" publisher-id="4">
+    <title>Harry Potter And The Goblet Of Fire</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <basePrice>23.50</basePrice>
+  </book>
+  <book id="13" author-id="4" publisher-id="4">
+    <title>Harry Potter And The Order Of Phoenix</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <basePrice>22.00</basePrice>
+  </book>
+  <book id="14" author-id="4" publisher-id="4">
+    <title>Harry Potter And The Half Blood Prince</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <basePrice>20.00</basePrice>
+  </book>
+  <book id="15" author-id="4" publisher-id="4">
+    <title>Harry Potter And The Deathly Hallows</title>
+    <author>J.K. Rowling</author>
+    <publisher>Bloomsbury</publisher>
+    <basePrice>24.00</basePrice>
+  </book>
+  <book id="16" author-id="5" publisher-id="5">
+    <title>Warcraft Day Of The Dragon</title>
+    <author>Richard A. Knaak</author>
+    <publisher>Pocket Star</publisher>
+    <basePrice>17.00</basePrice>
+  </book>
+  <book id="17" author-id="6" publisher-id="5">
+    <title>Warcraft Lord Of The Clans</title>
+    <author>Christie Golden</author>
+    <publisher>Pocket Star</publisher>
+    <basePrice>18.50</basePrice>
+  </book>
+  <book id="18" author-id="7" publisher-id="5">
+    <title>Warcraft The Last Guardian</title>
+    <author>Jeff Grubb</author>
+    <publisher>Pocket Star</publisher>
+    <basePrice>18.00</basePrice>
+  </book>
+  <book id="19" author-id="8" publisher-id="5">
+    <title>Warcraft Of Blood And Honor</title>
+    <author>Chris Metzen</author>
+    <publisher>Pocket Star</publisher>
+    <basePrice>15.50</basePrice>
+  </book>
+  <book id="20" author-id="5" publisher-id="5">
+    <title>Warcraft The Well Of Eternity</title>
+    <author>Chris Metzen</author>
+    <publisher>Pocket Star</publisher>
+    <basePrice>17.00</basePrice>
+  </book>
+  <book id="21" author-id="5" publisher-id="5">
+    <title>Warcraft The Demon Soul</title>
+    <author>Chris Metzen</author>
+    <publisher>Pocket Star</publisher>
+    <basePrice>19.50</basePrice>
+  </book>
+  <book id="22" author-id="5" publisher-id="5">
+    <title>Warcraft The Sundering</title>
+    <author>Chris Metzen</author>
+    <publisher>Pocket Star</publisher>
+    <basePrice>20.00</basePrice>
+  </book>
+  <book id="23" author-id="9" publisher-id="6">
+    <title>The Hunger Games</title>
+    <author>Suzanne Collins</author>
+    <publisher>Scholastic</publisher>
+    <basePrice>21.50</basePrice>
+  </book>
+  <book id="24" author-id="9" publisher-id="6">
+    <title>Catching Fire</title>
+    <author>Suzanne Collins</author>
+    <publisher>Scholastic</publisher>
+    <basePrice>22.00</basePrice>
+  </book>
+  <book id="25" author-id="9" publisher-id="6">
+    <title>Mockingjay</title>
+    <author>Suzanne Collins</author>
+    <publisher>Scholastic</publisher>
+    <basePrice>23.50</basePrice>
+  </book>
+  <book id="26" author-id="10" publisher-id="7">
+    <title>The Spinoza Problem</title>
+    <author>Yrvin D. Yalom</author>
+    <publisher>Basic Books</publisher>
+    <basePrice>15.70</basePrice>
+  </book>
+  <book id="27" author-id="10" publisher-id="3">
+    <title>The Schopenhauer Cure</title>
+    <author>Yrvin D. Yalom</author>
+    <publisher>Harper Collins</publisher>
+    <basePrice>17.00</basePrice>
+  </book>
+  <book id="28" author-id="11" publisher-id="8">
+    <title>The Future Of The Mind</title>
+    <author>Michio Kaku</author>
+    <publisher>Bard</publisher>
+    <basePrice>14.60</basePrice>
+  </book>
+  <book id="29" author-id="11" publisher-id="8">
+    <title>Physics Of The future</title>
+    <author>Michio Kaku</author>
+    <publisher>Bard</publisher>
+    <basePrice>15.99</basePrice>
+  </book>
+  <book id="30" author-id="12" publisher-id="9">
+    <title>Franky Furbo</title>
+    <author>William Wharton</author>
+    <publisher>Henry Holt</publisher>
+    <basePrice>8.50</basePrice>
+  </book>
+  <book id="31" author-id="13" publisher-id="1">
+    <title>Herztier</title>
+    <author>Herta Müller</author>
+    <publisher>Ciela</publisher>
+    <basePrice>12.90</basePrice>
+  </book>
+  <book id="32" author-id="14" publisher-id="10">
+    <title>The Sun Also Rises</title>
+    <author>Ernest Hemingway</author>
+    <publisher>Scribner's</publisher>
+    <basePrice>16.49</basePrice>
+  </book>
+  <book id="33" author-id="14" publisher-id="10">
+    <title>The Old Man and the Sea</title>
+    <author>Ernest Hemingway</author>
+    <publisher>Scribner's</publisher>
+    <basePrice>11.50</basePrice>
+  </book>
+  <book id="34" author-id="3" publisher-id="3">
+    <title>The Children Of Hurin</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher>Harper Collins</publisher>
+    <basePrice>17.99</basePrice>
+  </book>
+  <book id="35" author-id="3" publisher-id="3">
+    <title>Unfinished Tales</title>
+    <author>J.R.R. Tolkien</author>
+    <publisher>Harper Collins</publisher>
+    <basePrice>16.50</basePrice>
+  </book>
 </Books>
