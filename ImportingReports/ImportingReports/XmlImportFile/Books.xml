@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Books>
+  <book id="1" author-id="1" publisher-id ="1">
+    <title>A Game of Thrones</title>
+    <author>George R.R. Martin></author>
+    <publisher>Ciela</publisher>
+    <basePrice>20.00</basePrice>
+  </book>
+  <book id="2" author-id="1" publisher-id="1">
+    <title>A Clash of Kings</title>
+    <author>George R.R. Martin></author>
+    <publisher>Ciela</publisher>
+    <basePrice>20.00</basePrice>
+  </book>
+  <book id="3" author-id="2" publisher-id="2">
+    <title>The Name of the Wind</title>
+    <author>Patrick Rotfuss</author>
+    <publisher>Prozoretz</publisher>
+    <basePrice>22.00</basePrice>
+  </book>
+  <book id="4" author-id="2" publisher-id="2">
+    <title>The Wise Man's Fear</title>
+    <author>Patrick Rotfuss</author>
+    <publisher>Prozoretz</publisher>
+    <basePrice>30.00</basePrice>
+  </book>
+</Books>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportingReports", "ImportingReports\ImportingReports.csproj", "{746101C6-E577-4074-B863-07D524FAC38A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{E462957C-D522-4399-AD23-E0626D5AF657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{8771E65D-65F5-44E4-9721-525A69DD613E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{746101C6-E577-4074-B863-07D524FAC38A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746101C6-E577-4074-B863-07D524FAC38A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746101C6-E577-4074-B863-07D524FAC38A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746101C6-E577-4074-B863-07D524FAC38A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E462957C-D522-4399-AD23-E0626D5AF657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E462957C-D522-4399-AD23-E0626D5AF657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E462957C-D522-4399-AD23-E0626D5AF657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E462957C-D522-4399-AD23-E0626D5AF657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8771E65D-65F5-44E4-9721-525A69DD613E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8771E65D-65F5-44E4-9721-525A69DD613E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8771E65D-65F5-44E4-9721-525A69DD613E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8771E65D-65F5-44E4-9721-525A69DD613E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
