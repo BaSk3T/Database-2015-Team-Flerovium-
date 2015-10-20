@@ -17,6 +17,6 @@ namespace Data
         public virtual IDbSet<Book> Books { get; set; }
         public virtual IDbSet<BookPublisher> BookPublishers { get; set; }
         public virtual IDbSet<Author> Authors { get; set; }
-        public virtual IDbSet<Sales> Sales { get; set; }
+        public virtual IDbSet<Sale> Sales { get; set; }
     }
 }

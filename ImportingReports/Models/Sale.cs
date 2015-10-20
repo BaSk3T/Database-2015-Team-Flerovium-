@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Sales
+    public class Sale
     {
-        public int SalesId { get; set; }
+        public int SaleId { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
         public int BookId { get; set; }
@@ -35,5 +35,10 @@ namespace Models
         public decimal TotalSum { get; set; }
 
         public virtual Book Book { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0}, {1}, {2}, {3}, {4}", this.SaleId, this.BookId, this.Quantity, this.Location, this.Date);
+        }
     }
 }

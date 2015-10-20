@@ -10,11 +10,11 @@ namespace Models
 {
     public class Book
     {
-        private ICollection<Sales> sales;
+        private ICollection<Sale> sales;
 
         public Book()
         {
-            this.sales = new HashSet<Sales>();
+            this.sales = new HashSet<Sale>();
         }
 
         public int BookId { get; set; }
@@ -37,7 +37,7 @@ namespace Models
 
         public virtual BookPublisher Publisher { get; set; }
 
-        public virtual ICollection<Sales> Sales {
+        public virtual ICollection<Sale> Sales {
             get { return this.sales; }
             set { this.sales = value; }
         }

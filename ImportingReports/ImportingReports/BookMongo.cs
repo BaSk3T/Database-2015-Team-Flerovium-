@@ -18,9 +18,9 @@ namespace ImportingReports
             {
                 return el => new BookMongo
                 {
-                    Id = el.Attribute("id").ToString(),
-                    AuthorId = el.Attribute("author-id").ToString(),
-                    PublisherId = el.Attribute("publisher-id").ToString(),
+                    Id = el.Attribute("id").Value.ToString(),
+                    AuthorId = el.Attribute("author-id").Value.ToString(),
+                    PublisherId = el.Attribute("publisher-id").Value.ToString(),
                     Title = el.Element("title").Value,
                     Author = el.Element("author").Value,
                     Publisher = el.Element("publisher").Value,

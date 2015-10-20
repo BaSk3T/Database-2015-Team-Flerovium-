@@ -14,25 +14,46 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Data.OleDb;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Security.Permissions;
+using Data;
+using Models;
 
 
 namespace ImportingReports
 {
     class Program
     {
-        static void Main()
+        private static void Main()
         {
+            Run();
+            Console.ReadKey();
+        }
+
+        static async void Run()
+        {
+
             //var extractPath = ExtractingFromZip();
             var xmlPath =
-                @"C:\Users\Cookie\Desktop\Telerik Academy\Databases\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\XmlImportFile\Books.xml";
+                @"..\..\XmlImportFile\Books.xml";
             XDocument doc = XDocument.Load(xmlPath);
 
             var zipFilePath = @"C:\Users\Cookie\Desktop\Telerik Academy\Databases\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\ZipFile\Sales-Reports.zip";
             var extractedFolderPath = ExtractZip(zipFilePath);
             var dateNamedFolders = GetDateNamedFolders(extractedFolderPath);
 
-            TestExcel(dateNamedFolders.ElementAt(0).GetFiles()[0].FullName, dateNamedFolders.ElementAt(0).GetFiles()[0].Name);
+            var allSales = new List<Sale>();
+
+            foreach (var folder in dateNamedFolders)
+            {
+                foreach (var file in folder.GetFiles())
+                {
+                    var salesForFile = ExtractExcelData(file.FullName, file.Name, folder.Name);
+                    allSales.AddRange(salesForFile);
+                }
+            }
+
+            allSales.ForEach(Console.WriteLine);
 
             var root = doc.Root;
 
@@ -45,8 +66,64 @@ namespace ImportingReports
 
             var bsonBooks = books.AsQueryable().Select(BookMongo.ToBsonDocument);
 
-            //booksCollection.InsertManyAsync(bsonBooks);
-            //Console.ReadKey();
+            await booksCollection.InsertManyAsync(bsonBooks);
+
+            var dbContext = new BooksDbContext();
+            var mongoBooks = await booksCollection.Find(new BsonDocument()).ToListAsync();
+            var bookModels = mongoBooks.Select(bookBson =>
+            {
+                var authorIdToString = bookBson["AuthorId"].ToString();
+                var author =
+                    dbContext.Authors.FirstOrDefault(a => a.AuthorId.ToString() == authorIdToString);
+                if (author == null)
+                {
+                    author = new Author
+                    {
+                        AuthorId = int.Parse(bookBson["AuthorId"].ToString()),
+                        AuthorName = bookBson["Author"].ToString()
+                    };
+                    dbContext.Authors.AddOrUpdate(a=>a.AuthorName, author);
+                    dbContext.SaveChanges();
+                }
+
+                var publisherIdToString = bookBson["PublisherId"].ToString();
+                var publisher = dbContext.BookPublishers.FirstOrDefault(
+                     b => b.BookPublisherId.ToString() == publisherIdToString);
+
+                if (publisher == null)
+                {
+                    publisher = new BookPublisher
+                    {
+                        BookPublisherId = int.Parse(bookBson["PublisherId"].ToString()),
+                        BookPublisherName = bookBson["Publisher"].ToString()
+                    };
+                    dbContext.BookPublishers.AddOrUpdate(p => p.BookPublisherName, publisher);
+                    dbContext.SaveChanges();
+                }
+
+                var book = new Book
+                {
+                    BookId = int.Parse(bookBson["BookId"].ToString()),
+                    AuthorId = int.Parse(bookBson["AuthorId"].ToString()),
+                    BookPublisherId = int.Parse(bookBson["PublisherId"].ToString()),
+                    Title = bookBson["Title"].ToString(),
+                    BasePrice = decimal.Parse(bookBson["BasePrice"].ToString()),
+                    Author = author,
+                    Publisher = publisher
+                };
+                return book;
+            });
+
+            Console.WriteLine("--------------- {0} Saving Books", bookModels.Count());
+            dbContext.Books.AddOrUpdate(b=>b.Title, bookModels.ToArray());
+            
+            dbContext.SaveChanges();
+            Console.WriteLine("---------------Books saved!");
+
+            allSales.ForEach(sale => dbContext.Sales.Add(sale));
+            dbContext.SaveChanges();
+
+            Console.ReadKey();
         }
 
         static string ExtractZip(string zipFilePath)
@@ -97,10 +174,10 @@ namespace ImportingReports
             }
         }
 
-        
 
 
-        private static void TestExcel(string excelFilePath, string excelFileName)
+
+        private static IEnumerable<Sale> ExtractExcelData(string excelFilePath, string excelFileName, string date)
         {
             var connectionStringFormat = @"Provider=Microsoft.Jet.OLEDB.4.0;
                Data Source={0};
@@ -116,34 +193,39 @@ namespace ImportingReports
 
             var dataSet = new DataSet();
 
-
             adapter.Fill(dataSet, excelFileName);
             var table = dataSet.Tables[0];
-           
+
             Console.WriteLine(table.TableName);
+            var sales = new List<Sale>();
 
             foreach (DataRow data in table.Rows)
             {
-                // var product = new Products();
-                //product.Id = data[0].ToString();
-                //product.Name = data[1].ToString();
-                // list.Add(product);
-                Console.Write(data[0] + " ");
-                Console.Write(data[1] + " ");
-                Console.Write(data[2] + " ");
-                Console.Write(data[3] + " ");
+                try
+                {
+                    var sale = new Sale
+                    {
+                        BookId = int.Parse(data[0].ToString()),
+                        Quantity = int.Parse(data[1].ToString()),
+                        UnitPrice = decimal.Parse(data[2].ToString()),
+                        Sum = decimal.Parse(data[3].ToString()),
+                        Location = excelFileName,
+                        Date = DateTime.Parse(date)
+                    };
 
+                    sales.Add(sale);
+                }
+                catch
+                {
+                }
             }
 
-            //foreach (var pr in list)
-            //{
-            //  Console.WriteLine(pr.Id +"-"+pr.Name);
-            //}
             conn.Close();
+            return sales;
         }
     }
 
 }
 
-    
+
 
