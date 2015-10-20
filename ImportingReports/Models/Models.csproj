@@ -53,6 +53,9 @@
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="BookPublisher.cs" />
+    <Compile Include="MySQLModels\Courier.cs" />
+    <Compile Include="MySQLModels\Product.cs" />
+    <Compile Include="MySQLModels\Town.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sale.cs" />
   </ItemGroup>

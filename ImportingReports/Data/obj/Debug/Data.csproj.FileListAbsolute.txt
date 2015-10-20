@@ -1,0 +1,12 @@
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\Data.dll.config
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\Data.dll
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\Data.pdb
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\EntityFramework.dll
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\Models.dll
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\Models.pdb
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\EntityFramework.xml
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\obj\Debug\Data.dll
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\Data\obj\Debug\Data.pdb

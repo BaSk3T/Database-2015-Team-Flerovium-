@@ -18,6 +18,9 @@ using System.Data.Entity.Migrations;
 using System.Security.Permissions;
 using Data;
 using Models;
+using Models.MySQLModels;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 
 namespace ImportingReports
@@ -26,8 +29,8 @@ namespace ImportingReports
     {
         private static void Main()
         {
-            Run();
-            Console.ReadKey();
+            //Run();
+            //Console.ReadKey();
         }
 
         static async void Run()
@@ -82,7 +85,7 @@ namespace ImportingReports
                         AuthorId = int.Parse(bookBson["AuthorId"].ToString()),
                         AuthorName = bookBson["Author"].ToString()
                     };
-                    dbContext.Authors.AddOrUpdate(a=>a.AuthorName, author);
+                    dbContext.Authors.AddOrUpdate(a => a.AuthorName, author);
                     dbContext.SaveChanges();
                 }
 
@@ -115,8 +118,8 @@ namespace ImportingReports
             });
 
             Console.WriteLine("--------------- {0} Saving Books", bookModels.Count());
-            dbContext.Books.AddOrUpdate(b=>b.Title, bookModels.ToArray());
-            
+            dbContext.Books.AddOrUpdate(b => b.Title, bookModels.ToArray());
+
             dbContext.SaveChanges();
             Console.WriteLine("---------------Books saved!");
 
@@ -153,6 +156,7 @@ namespace ImportingReports
             var dirInfo = new DirectoryInfo(extractedFolderPath);
             TraverseDirectory(dirInfo, dirs);
             return dirs;
+
         }
 
         private static void TraverseDirectory(DirectoryInfo dirInfo, IList<DirectoryInfo> dirs)
@@ -233,8 +237,108 @@ namespace ImportingReports
             conn.Close();
             return sales;
         }
-    }
 
+        private static ICollection<Courier> MySQLReadCouriersTable()
+        {
+            var server = "localhost";
+            var database = "specialdeliveries";
+            var uid = "root";
+            var password = "1234";
+            string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            var query = "SELECT * FROM Couriers";
+
+            var command = new MySqlCommand(query, connection);
+
+            MySqlDataReader reader = command.ExecuteReader();
+            ICollection<Courier> courierCollection = new List<Courier>();
+
+
+            while (reader.Read())
+            {
+                var currentCourier = new Courier()
+                {
+                    Id = (int)reader.GetValue(0),
+                    Name = (string)reader.GetValue(1),
+                    TownId = (int)reader.GetValue(2)
+                };
+                courierCollection.Add(currentCourier);
+            }
+
+            return courierCollection;
+        }
+
+        private static ICollection<Town> MySQLReadTownsTable()
+        {
+            var server = "localhost";
+            var database = "specialdeliveries";
+            var uid = "root";
+            var password = "1234";
+            string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            var query = "SELECT * FROM Towns";
+
+            var command = new MySqlCommand(query, connection);
+
+            MySqlDataReader reader = command.ExecuteReader();
+            ICollection<Town> townsCollection = new List<Town>();
+
+
+            while (reader.Read())
+            {
+                var currentCourier = new Town()
+                {
+                    Id = (int)reader.GetValue(0),
+                    Name = (string)reader.GetValue(1),
+                };
+                townsCollection.Add(currentCourier);
+            }
+
+            return townsCollection;
+        }
+
+        private static ICollection<Product> MySQLReadProductsTable()
+        {
+            var server = "localhost";
+            var database = "specialdeliveries";
+            var uid = "root";
+            var password = "1234";
+            string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+
+            var query = "SELECT * FROM Products";
+
+            var command = new MySqlCommand(query, connection);
+
+            MySqlDataReader reader = command.ExecuteReader();
+            var productsCollection = new List<Product>();
+
+
+            while (reader.Read())
+            {
+                var currentCourier = new Product()
+                {
+                    Id = (int)reader.GetValue(0),
+                    Name = (string)reader.GetValue(1),
+                    Description = (string)reader.GetValue(2),
+                    CourierId = (int)reader.GetValue(3)
+                };
+                productsCollection.Add(currentCourier);
+            }
+            
+            return productsCollection;
+        }
+    }
 }
 
 

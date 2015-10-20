@@ -16,7 +16,7 @@ namespace Models
         {
             this.sales = new HashSet<Sale>();
         }
-
+        
         public int BookId { get; set; }
 
         [Required]
