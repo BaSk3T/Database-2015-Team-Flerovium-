@@ -124,6 +124,16 @@ namespace ImportingReports
             dbContext.SaveChanges();
 
             Console.ReadKey();
+            //booksCollection.InsertManyAsync(bsonBooks);
+            //Console.ReadKey();
+
+
+            /* In order to create a PDF report, use this: 
+            var db = new dbEntities();   // or whatever we use      
+            var testPdf = new PDFReporter(db); // creating an instance
+            var data = db.Sales.ToList(); // or something more precise
+            testPdf.GeneratePdfSalesReport("Sales", data); 
+            */
         }
 
         static string ExtractZip(string zipFilePath)

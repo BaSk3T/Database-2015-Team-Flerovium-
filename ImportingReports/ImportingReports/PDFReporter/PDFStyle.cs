@@ -1,4 +1,4 @@
-﻿namespace PDFReporter
+﻿namespace ImportingReports
 {
     using iTextSharp.text;
 
