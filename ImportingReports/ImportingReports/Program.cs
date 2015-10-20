@@ -30,8 +30,8 @@ namespace ImportingReports
     {
         private static void Main()
         {
-            Run();
-            Console.ReadKey();
+            //Run();
+            //Console.ReadKey();
         }
 
         static async void Run()
@@ -303,7 +303,7 @@ namespace ImportingReports
 
             return townsCollection;
         }
-
+         
         private static ICollection<Product> MySQLReadProductsTable()
         {
             var server = "localhost";
@@ -340,7 +340,7 @@ namespace ImportingReports
             return productsCollection;
         }
 
-        public static void WriteExcelTownSheet(ICollection<Town> towns, string fileName)
+        public static void WriteExcelSheet(ICollection<Town> towns, string fileName)
         {
             // string fileName = "Towns.xlsx";
             var file = new FileInfo(fileName);
@@ -370,7 +370,7 @@ namespace ImportingReports
             }
         }
 
-        public static void WriteExcelCourierSheet(ICollection<Courier> couriers, string fileName)
+        public static void WriteExcelSheet(ICollection<Courier> couriers, string fileName)
         {
             var file = new FileInfo(fileName);
             var rowNumber = 2;
@@ -402,7 +402,7 @@ namespace ImportingReports
             }
         }
 
-        public static void WriteExcelProductSheet(ICollection<Product> products, string fileName)
+        public static void WriteExcelSheet(ICollection<Product> products, string fileName)
         {
             var file = new FileInfo(fileName);
             var rowNumber = 2;
