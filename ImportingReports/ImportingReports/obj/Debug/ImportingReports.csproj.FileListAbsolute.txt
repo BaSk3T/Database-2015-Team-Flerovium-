@@ -1,0 +1,2 @@
+C:\Users\BaSk3T\Desktop\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\bin\Debug\ImportingReports.exe.config
+C:\Users\BaSk3T\Desktop\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\obj\Debug\ImportingReports.csproj.ResolveComReference.cache
