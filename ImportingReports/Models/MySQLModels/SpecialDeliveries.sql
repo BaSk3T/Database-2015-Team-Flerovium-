@@ -29,7 +29,7 @@ CREATE TABLE `couriers` (
   `Name` varchar(45) DEFAULT NULL,
   `TownId` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `couriers` (
 
 LOCK TABLES `couriers` WRITE;
 /*!40000 ALTER TABLE `couriers` DISABLE KEYS */;
-INSERT INTO `couriers` VALUES (1,'DHL',1),(2,'Speedy',3),(3,'TNT',2);
+INSERT INTO `couriers` VALUES (1,'DHL',1),(2,'Speedy',3),(3,'TNT',2),(4,'RocketCourier',3),(5,'HoTDelivery',1),(6,'PassPortExpeditor',3),(7,'NationalCourier',3),(8,'CourierBoard',1),(9,'SwiftCourier',1),(10,'ParcelMonkey',2),(11,'BestCourier',1);
 /*!40000 ALTER TABLE `couriers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +55,7 @@ CREATE TABLE `products` (
   `Description` mediumtext,
   `CourierId` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'PromoCd','Promo set of DVD books',1),(2,'Poster','Poster of HG',1),(3,'USBStick','Toshiba 8Gb',3),(4,'USBStick','Toshiba 16Gb',2),(5,'USBStick','Toshiba 32GB',3),(6,'USBStick','Toshiba 32GB',3),(7,'USBStick','Toshiba 32GB',3);
+INSERT INTO `products` VALUES (1,'PromoCd','Promo set of DVD books',1),(2,'Poster','Poster of HG',1),(3,'USBStick','Toshiba 8Gb',3),(4,'USBStick','Toshiba 16Gb',2),(5,'USBStick','Toshiba 32GB',3),(6,'USBStick','Toshiba 32GB',3),(7,'USBStick','Toshiba 32GB',3),(8,'Voucher','50% discount in Orange',2),(9,'Voucher','30% discount in Orange',2),(10,'Voucher','15% discount in Orange',2),(11,'GoldVoucher','100% discount in Orange',1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,7 +79,7 @@ CREATE TABLE `towns` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE `towns` (
 
 LOCK TABLES `towns` WRITE;
 /*!40000 ALTER TABLE `towns` DISABLE KEYS */;
-INSERT INTO `towns` VALUES (1,'Sofia'),(2,'Plovdiv'),(3,'Varna'),(4,'Burgas'),(5,'Rousse'),(6,'Pernik');
+INSERT INTO `towns` VALUES (1,'Sofia'),(2,'Plovdiv'),(3,'Varna'),(4,'Burgas'),(5,'Rousse'),(6,'Pernik'),(7,'Dobrich'),(8,'Kiustendil'),(9,'Montana'),(10,'Pleven'),(11,'Lom');
 /*!40000 ALTER TABLE `towns` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -101,4 +101,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-20  7:24:07
+-- Dump completed on 2015-10-20  9:45:47

@@ -8,10 +8,6 @@ namespace Models.MySQLModels
 {
     public class Town
     {
-        public Town()
-        {
-
-        }
         public int Id { get; set; }
         public string Name { get; set; }
     }

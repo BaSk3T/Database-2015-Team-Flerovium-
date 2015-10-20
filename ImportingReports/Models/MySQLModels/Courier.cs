@@ -8,13 +8,8 @@ namespace Models.MySQLModels
 {
     public class Courier
     {
-        public Courier()
-        {
-        }
         public int Id { get; set; }
         public string Name { get; set; }
         public int TownId { get; set; }
-
-
     }
 }
