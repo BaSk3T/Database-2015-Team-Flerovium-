@@ -30,8 +30,8 @@ namespace ImportingReports
     {
         private static void Main()
         {
-            //Run();
-            //Console.ReadKey();
+            Run();
+            Console.ReadKey();
         }
 
         static async void Run()
@@ -39,10 +39,10 @@ namespace ImportingReports
 
             //var extractPath = ExtractingFromZip();
             var xmlPath =
-                @"..\..\XmlImportFile\Books.xml";
+                @"E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\XmlImportFile\Books.xml";
             XDocument doc = XDocument.Load(xmlPath);
 
-            var zipFilePath = @"C:\Users\Cookie\Desktop\Telerik Academy\Databases\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\ZipFile\Sales-Reports.zip";
+            var zipFilePath = @"E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\ZipFile\Sales-Reports.zip";
             var extractedFolderPath = ExtractZip(zipFilePath);
             var dateNamedFolders = GetDateNamedFolders(extractedFolderPath);
 
@@ -126,6 +126,15 @@ namespace ImportingReports
 
             allSales.ForEach(sale => dbContext.Sales.Add(sale));
             dbContext.SaveChanges();
+
+            var products = MySQLReadProductsTable();
+            WriteExcelSheet(products, "Products.xlsx");
+
+            var towns = MySQLReadTownsTable();
+            WriteExcelSheet(towns, "Towns.xlsx");
+
+            var couriers = MySQLReadCouriersTable();
+            WriteExcelSheet(couriers, "Couriers.xlsx");
 
             Console.ReadKey();
             //booksCollection.InsertManyAsync(bsonBooks);
