@@ -127,6 +127,7 @@ namespace ImportingReports
             allSales.ForEach(sale => dbContext.Sales.Add(sale));
             dbContext.SaveChanges();
 
+            Console.WriteLine("HERE");
             var products = MySQLReadProductsTable();
             WriteExcelSheet(products, "Products.xlsx");
 
