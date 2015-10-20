@@ -26,3 +26,5 @@ E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\obj\Debug
 E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\obj\Debug\ImportingReports.pdb
 E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\bin\Debug\MySql.Data.dll
 E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\bin\Debug\ExcelLibrary.dll
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\bin\Debug\EPPlus.dll
+E:\TWs\Database-2015-Team-Flerovium-\ImportingReports\ImportingReports\bin\Debug\EPPlus.xml

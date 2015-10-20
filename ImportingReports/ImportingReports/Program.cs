@@ -21,6 +21,7 @@ using Models;
 using Models.MySQLModels;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using OfficeOpenXml;
 
 
 namespace ImportingReports
@@ -29,8 +30,8 @@ namespace ImportingReports
     {
         private static void Main()
         {
-            //Run();
-            //Console.ReadKey();
+            Run();
+            Console.ReadKey();
         }
 
         static async void Run()
@@ -337,6 +338,102 @@ namespace ImportingReports
             }
             
             return productsCollection;
+        }
+
+        public static void WriteExcelTownSheet(ICollection<Town> towns, string fileName)
+        {
+            // string fileName = "Towns.xlsx";
+            var file = new FileInfo(fileName);
+            var rowNumber = 2;
+
+            using (var package = new ExcelPackage(file))
+            {
+
+                ExcelWorksheet TownSheet = package.Workbook.Worksheets.Add("Townss");
+                TownSheet.Cells[1, 1].Value = "Id";
+                TownSheet.Cells[1, 2].Value = "Name";
+
+                using (var range = TownSheet.Cells[1, 1, 1, 2])
+                {
+                    range.Style.Font.Bold = true;
+                    range.Style.ShrinkToFit = false;
+                }
+
+
+                foreach (var town in towns)
+                {
+                    TownSheet.Cells[rowNumber, 1].Value = town.Id;
+                    TownSheet.Cells[rowNumber, 2].Value = town.Name;
+                    rowNumber++;
+                }
+                package.Save();
+            }
+        }
+
+        public static void WriteExcelCourierSheet(ICollection<Courier> couriers, string fileName)
+        {
+            var file = new FileInfo(fileName);
+            var rowNumber = 2;
+
+            using (var package = new ExcelPackage(file))
+            {
+
+                ExcelWorksheet CourierSheet = package.Workbook.Worksheets.Add("Couriers");
+                CourierSheet.Cells[1, 1].Value = "Id";
+                CourierSheet.Cells[1, 2].Value = "Name";
+                CourierSheet.Cells[1, 3].Value = "TownId";
+
+
+                using (var range = CourierSheet.Cells[1, 1, 1, 3])
+                {
+                    range.Style.Font.Bold = true;
+                    range.Style.ShrinkToFit = false;
+                }
+
+
+                foreach (var courier in couriers)
+                {
+                    CourierSheet.Cells[rowNumber, 1].Value = courier.Id;
+                    CourierSheet.Cells[rowNumber, 2].Value = courier.Name;
+                    CourierSheet.Cells[rowNumber, 3].Value = courier.TownId;
+                    rowNumber++;
+                }
+                package.Save();
+            }
+        }
+
+        public static void WriteExcelProductSheet(ICollection<Product> products, string fileName)
+        {
+            var file = new FileInfo(fileName);
+            var rowNumber = 2;
+
+            using (var package = new ExcelPackage(file))
+            {
+
+                ExcelWorksheet ProductSheet = package.Workbook.Worksheets.Add("Products");
+                ProductSheet.Cells[1, 1].Value = "Id";
+                ProductSheet.Cells[1, 2].Value = "Name";
+                ProductSheet.Cells[1, 3].Value = "Description";
+                ProductSheet.Cells[1, 4].Value = "CourierId";
+
+                using (var range = ProductSheet.Cells[1, 2, 1, 4])
+                {
+                    range.Style.Font.Bold = true;
+                    range.Style.ShrinkToFit = false;
+                }
+
+
+                foreach (var product in products)
+                {
+                    ProductSheet.Cells[rowNumber, 1].Value = product.Id;
+                    ProductSheet.Cells[rowNumber, 2].Value = product.Name;
+                    ProductSheet.Cells[rowNumber, 3].Value = product.Description;
+                    ProductSheet.Cells[rowNumber, 4].Value = product.CourierId;
+                    rowNumber++;
+                }
+
+                package.Save();
+            }
         }
     }
 }
